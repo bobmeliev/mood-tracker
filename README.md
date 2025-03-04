@@ -21,6 +21,6 @@ To create Windows executable use pyinstaller
 
 `pip install pyinstaller`
 
-`pyinstaller --onefile --windowed --name=MoodTrackerv1 app.py`
+`pyinstaller --paths=venv\Lib\site-packages --onefile --noconsole --windowed --name=MoodTrackerv1 app.py`
 
 EXE file will be created inside dist folder. 
