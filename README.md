@@ -1,6 +1,9 @@
 ## Simple Mood & Sleep tracker app
 
-Simple mood and sleep tracker app which can be used to track your morning sleep and mood. Tkinter   
+Simple mood and sleep tracker app which can be used to track your morning sleep and mood. 
+
+GUI library: Tkinter
+Database: SQLite
 
 ## Install
 
