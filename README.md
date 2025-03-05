@@ -11,9 +11,18 @@ To execute install Python
 
 `pip install requirements.txt`
 
-After run Python file
+## How to run 
+
+To run application 
 
 `python app.py`
+
+## How to run tests
+
+To run pytest tests
+
+`pytest -v`
+
 
 ## Windows executable
 
