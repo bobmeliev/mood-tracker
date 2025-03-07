@@ -42,7 +42,25 @@ def get_valid_time(prompt):
             print("Invalid time format. Please enter in HH:MM (24-hour format).")
 
 def get_text_input(prompt):
-    return input(prompt).strip()
+    print(prompt + " (Type 'END' on a new line to finish)")
+    lines = []
+    while True:
+        line = input()
+        if line.strip().upper() == "END":
+            break
+        lines.append(line)
+    return "\n".join(lines).strip()
+
+def get_gratitude_entries():
+    gratitude_entries = []
+    while True:
+        gratitude = get_text_input("Enter a gratitude:")
+        if gratitude:
+            gratitude_entries.append(gratitude)
+        more = input("Would you like to add another gratitude? (yes/no): ").strip().lower()
+        if more != "yes":
+            break
+    return gratitude_entries
 
 # Collect user journal entry
 def collect_entry():
@@ -65,10 +83,7 @@ def collect_entry():
         mood = get_valid_int("Morning mood (1-10): ", 1, 10)
         sleep_quality = get_valid_int("Sleep quality (1-10): ", 1, 10)
         wake_up_time = get_valid_time("Wake up time (HH:MM): ")
-        
-        for i in range(3):
-            gratitude_entries.append(get_text_input(f"Gratitude {i+1}: "))
-        
+        gratitude_entries = get_gratitude_entries()
         thoughts = get_text_input("Morning thoughts: ")
     
     elif time_of_day == "afternoon":
